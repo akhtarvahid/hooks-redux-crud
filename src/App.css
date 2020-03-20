@@ -1,0 +1,17 @@
+.jumbotron {
+  padding: 15px 30px;
+  /* background-color: #7892b494; */
+}
+.btn-primary {
+  color: #fff;
+  background-color: #5fd363;
+  border: 1px solid #5fd363;
+}
+.btn-primary:hover {
+  background-color: #3aae3e;
+}
+.d-inline-block {
+  margin-right: 10px;
+  border-radius: 50%;
+  transition: transform 0.2s;
+}
