@@ -1,2 +1,2 @@
 # hooks-redux-crud
-hooks, redux....
+Create, read, update, and delete operation using react, redux, redux-saga.
