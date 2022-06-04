@@ -8,7 +8,7 @@ import ListItem from "./ListItem";
 import { getItems, addItem, updateItem } from "../actions/crudActions";
 import Header from "./Header";
 import Create from "./Create";
-import { Jumbotron, Container, Row, Col } from "react-bootstrap";
+import { Jumbotron, Container } from "react-bootstrap";
 import Update from "./Update";
 import Spinner from "../utils/loader/Spinner";
 toast.configure({
