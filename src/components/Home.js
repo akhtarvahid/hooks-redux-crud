@@ -1,16 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
-
+import { ToastContainer, toast } from 'react-toastify';
 import { v4 as uuid } from "uuid";
 import ListItem from "./ListItem";
-import { getItems, addItem, updateItem } from "../actions/crudActions";
 import Header from "./Header";
 import Create from "./Create";
-import { Container } from "react-bootstrap";
+import Container from "react-bootstrap/Container";
 import Update from "./Update";
 import Spinner from "../utils/loader/Spinner";
+import { getItems, addItem, updateItem } from "../actions/crudActions";
+import 'react-toastify/dist/ReactToastify.css';
 
 
 function Home() {
@@ -19,7 +18,7 @@ function Home() {
     description: "",
     loading: false
   });
-  const [popupStatus, setpopupStatus] = useState(false);
+  const [popupStatus, setPopupStatus] = useState(false);
   const dispatch = useDispatch();
   const { lists } = useSelector(state => state.lists);
   const list = useSelector(state => state);
@@ -49,11 +48,15 @@ function Home() {
         setTimeout(() => {
           if (!list.loading) {
             setState({ ...state, title: "", description: "", loading: false });
-            toast.success("Added Successfully");
+            toast.success("Added successfully!", {
+              position: toast.POSITION.TOP_RIGHT
+            });
           }
         }, 1000);
       } else {
-        toast.warning("Title & Description is Empty");
+        toast.warn("Title & Description is Empty!", {
+          position: toast.POSITION.TOP_RIGHT
+        });
       }
     } else {
       setState({ ...state, loading: true });
@@ -65,7 +68,7 @@ function Home() {
         }
       }, 1000);
     }
-    setpopupStatus(false);
+    setPopupStatus(false);
   };
   const onEdit = ({ title, description, id }) => {
     setState({
@@ -74,15 +77,15 @@ function Home() {
       title: title,
       description: description
     });
-    setpopupStatus(true);
+    setPopupStatus(true);
   };
   const handleClose = () => {
-    setpopupStatus(false);
+    setPopupStatus(false);
   };
-  //console.log(state);
   return (
     <div>
       <Header />
+      <ToastContainer />
       {state.loading && <Spinner />}
       <Container>
         {!popupStatus && (
