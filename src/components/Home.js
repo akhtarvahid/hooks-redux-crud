@@ -1,16 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { ToastContainer, toast } from 'react-toastify';
-
-import 'react-toastify/dist/ReactToastify.css';
 import { v4 as uuid } from "uuid";
 import ListItem from "./ListItem";
-import { getItems, addItem, updateItem } from "../actions/crudActions";
 import Header from "./Header";
 import Create from "./Create";
 import Container from "react-bootstrap/Container";
 import Update from "./Update";
 import Spinner from "../utils/loader/Spinner";
+import { getItems, addItem, updateItem } from "../actions/crudActions";
+import 'react-toastify/dist/ReactToastify.css';
 
 
 function Home() {
@@ -19,7 +18,7 @@ function Home() {
     description: "",
     loading: false
   });
-  const [popupStatus, setpopupStatus] = useState(false);
+  const [popupStatus, setPopupStatus] = useState(false);
   const dispatch = useDispatch();
   const { lists } = useSelector(state => state.lists);
   const list = useSelector(state => state);
@@ -69,7 +68,7 @@ function Home() {
         }
       }, 1000);
     }
-    setpopupStatus(false);
+    setPopupStatus(false);
   };
   const onEdit = ({ title, description, id }) => {
     setState({
@@ -78,10 +77,10 @@ function Home() {
       title: title,
       description: description
     });
-    setpopupStatus(true);
+    setPopupStatus(true);
   };
   const handleClose = () => {
-    setpopupStatus(false);
+    setPopupStatus(false);
   };
   return (
     <div>
