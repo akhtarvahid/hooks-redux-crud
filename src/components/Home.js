@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import { ToastContainer, toast } from 'react-toastify';
 
+import 'react-toastify/dist/ReactToastify.css';
 import { v4 as uuid } from "uuid";
 import ListItem from "./ListItem";
 import { getItems, addItem, updateItem } from "../actions/crudActions";
@@ -49,11 +49,15 @@ function Home() {
         setTimeout(() => {
           if (!list.loading) {
             setState({ ...state, title: "", description: "", loading: false });
-            toast.success("Added Successfully");
+            toast.success("Added successfully!", {
+              position: toast.POSITION.TOP_RIGHT
+            });
           }
         }, 1000);
       } else {
-        toast.warning("Title & Description is Empty");
+        toast.warn("Title & Description is Empty!", {
+          position: toast.POSITION.TOP_RIGHT
+        });
       }
     } else {
       setState({ ...state, loading: true });
@@ -79,10 +83,10 @@ function Home() {
   const handleClose = () => {
     setpopupStatus(false);
   };
-  //console.log(state);
   return (
     <div>
       <Header />
+      <ToastContainer />
       {state.loading && <Spinner />}
       <Container>
         {!popupStatus && (
