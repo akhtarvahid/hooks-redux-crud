@@ -3,19 +3,16 @@ import { useSelector, useDispatch } from "react-redux";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-import { uuid } from "uuidv4";
+import { v4 as uuid } from "uuid";
 import ListItem from "./ListItem";
 import { getItems, addItem, updateItem } from "../actions/crudActions";
 import Header from "./Header";
 import Create from "./Create";
-import { Jumbotron, Container } from "react-bootstrap";
+import { Container } from "react-bootstrap";
 import Update from "./Update";
 import Spinner from "../utils/loader/Spinner";
-toast.configure({
-  autoClose: 8000,
-  draggable: false,
-  position: toast.POSITION.BOTTOM_RIGHT
-});
+
+
 function Home() {
   const [state, setState] = useState({
     title: "",
@@ -89,18 +86,18 @@ function Home() {
       {state.loading && <Spinner />}
       <Container>
         {!popupStatus && (
-          <Jumbotron>
+          <div>
             <h3>Add Book</h3>
             <Create
               handleChange={handleChange}
               submitForm={submitForm}
               state={state}
             />
-          </Jumbotron>
+          </div>
         )}
-        <Jumbotron>
+        <div>
           <ListItem lists={lists} onEdit={onEdit} loading={true} />
-        </Jumbotron>
+        </div>
       </Container>
 
       {popupStatus && (

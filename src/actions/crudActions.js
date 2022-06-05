@@ -1,5 +1,5 @@
 import { LIST_ITEMS, ADD_ITEM, UPDATE_ITEM } from "../actions/types";
-import { uuid } from "uuidv4";
+import { v4 as uuid } from "uuid";
 let lists = [
   {
     id: uuid(),
