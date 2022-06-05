@@ -8,7 +8,7 @@ import ListItem from "./ListItem";
 import { getItems, addItem, updateItem } from "../actions/crudActions";
 import Header from "./Header";
 import Create from "./Create";
-import { Container } from "react-bootstrap";
+import Container from "react-bootstrap/Container";
 import Update from "./Update";
 import Spinner from "../utils/loader/Spinner";
 

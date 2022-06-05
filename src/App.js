@@ -5,6 +5,7 @@ import "./App.css";
 import store from "./store";
 import Home from "./components/Home";
 import ListDetails from "./components/ListDetails";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (
