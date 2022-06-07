@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import { Table } from "react-bootstrap";
 import { Form } from "react-bootstrap";
 import { FaEdit } from "react-icons/fa";
 import { MdDelete } from "react-icons/md";
 
-function ListItem({ lists, onEdit }) {
+function ListItem({ lists, editHandler }) {
   return (
     <Table responsive>
       <thead>
@@ -25,12 +25,12 @@ function ListItem({ lists, onEdit }) {
           lists.map((list, index) => (
             <tr key={list.id}>
               <td>
-                <Link to={`details/${list.id}`}>{index} </Link>
+                <Link to={`details/${list.id}`}>{index}</Link>
               </td>
               <td>{list.title}</td>
               <td>{list.description}</td>
               <td>
-                <FaEdit style={editStyle} onClick={() => onEdit(list)} />
+                <FaEdit style={editStyle} onClick={() => editHandler(list)} />
                 <MdDelete style={deleteStyle} />
               </td>
               <td>
