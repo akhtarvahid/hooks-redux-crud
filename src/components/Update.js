@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { ModalTitle, ModalFooter, Modal, Button, Form } from "react-bootstrap";
+import React from "react";
+import { Modal, Button, Form } from "react-bootstrap";
 
 function Update({ status, handleClose, handleChange, submitForm, state }) {
   return (

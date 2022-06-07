@@ -23,15 +23,15 @@ function Home() {
   const { lists } = useSelector(state => state.lists);
   const list = useSelector(state => state);
 
-  console.log(lists, list);
-
   useEffect(() => {
     dispatch(getItems());
   }, [dispatch]);
+
   const handleChange = e => {
     const { name, value } = e.target;
     setState({ ...state, [name]: value });
   };
+
   const submitForm = e => {
     e.preventDefault();
     const { title, description } = state;
@@ -70,18 +70,21 @@ function Home() {
     }
     setPopupStatus(false);
   };
-  const onEdit = ({ title, description, id }) => {
+
+  const editHandler = ({ title, description, id }) => {
     setState({
       ...state,
       id: id,
       title: title,
-      description: description
+      description
     });
     setPopupStatus(true);
   };
+
   const handleClose = () => {
     setPopupStatus(false);
   };
+
   return (
     <div>
       <Header />
@@ -99,7 +102,7 @@ function Home() {
           </div>
         )}
         <div>
-          <ListItem lists={lists} onEdit={onEdit} loading={true} />
+          {lists?.length > 0 && <ListItem lists={lists} editHandler={editHandler} loading={true} />}
         </div>
       </Container>
 
