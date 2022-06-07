@@ -102,7 +102,7 @@ function Home() {
           </div>
         )}
         <div>
-          <ListItem lists={lists} editHandler={editHandler} loading={true} />
+          {lists?.length > 0 && <ListItem lists={lists} editHandler={editHandler} loading={true} />}
         </div>
       </Container>
 
