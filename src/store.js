@@ -2,7 +2,7 @@ import { createStore, applyMiddleware } from "redux";
 import createSagaMiddleware from "redux-saga";
 
 import reducer from "./reducers";
-//import mySaga from "./sagas/sagas";
+import mySaga from "./sagas/sagas";
 
 const initialState = {};
 
@@ -16,5 +16,5 @@ const store = createStore(
 );
 
 // then run the saga
-// sagaMiddleware.run(mySaga);
+sagaMiddleware.run(mySaga);
 export default store;
