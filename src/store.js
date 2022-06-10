@@ -8,11 +8,12 @@ const initialState = {};
 
 // create the saga middleware
 const sagaMiddleware = createSagaMiddleware();
+const middleware = [sagaMiddleware];
 // mount it on the Store
 const store = createStore(
     reducer,
     initialState,
-    applyMiddleware(sagaMiddleware)
+    applyMiddleware(...middleware)
 );
 
 // then run the saga
