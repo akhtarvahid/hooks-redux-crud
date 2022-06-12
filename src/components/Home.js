@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { ToastContainer, toast } from 'react-toastify';
-import { v4 as uuid } from "uuid";
 import ListItem from "./ListItem";
 import Header from "./Header";
 import Create from "./Create";
@@ -36,7 +35,7 @@ function Home() {
     e.preventDefault();
     const { title, description } = state;
     let obj = {
-      id: uuid(),
+      id: lists.length + 1,
       title,
       description
     };

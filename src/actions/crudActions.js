@@ -1,32 +1,31 @@
 import { LIST_ITEMS, ADD_ITEM, UPDATE_ITEM } from "../actions/types";
-import { v4 as uuid } from "uuid";
-let lists = [
+export let lists = [
   {
-    id: uuid(),
+    id: 1,
     title: "javaScript",
     description: "Learn from documentation",
     completed: true
   },
   {
-    id: uuid(),
+    id: 2,
     title: "Sass",
     description: "Learn from ",
     completed: false
   },
   {
-    id: uuid(),
+    id: 3,
     title: "React",
     description: "Learn from react.js",
     completed: false
   },
   {
-    id: uuid(),
+    id: 4,
     title: "Node",
     description: "Nodejs documentation",
     completed: false
   },
   {
-    id: uuid(),
+    id: 5,
     title: "EcmaScript",
     description: "Learn from es6.org",
     completed: false
