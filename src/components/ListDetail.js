@@ -1,16 +1,15 @@
 import React from "react";
-import { useLocation, useParams, useNavigate } from "react-router-dom";
+import { useParams } from "react-router-dom";
+import { lists } from "../actions/crudActions";
 import Header from "./Header";
 
 function ListDetails() {
-  const location = useLocation();
   let slug = useParams();
-  let history = useNavigate();
 
-  console.log(location, slug, history);
+  const found = lists.filter(list => list.id === Number(slug.id));
+
   return (
     <div>
-      <Header />
       ListDetails
     </div>
   );

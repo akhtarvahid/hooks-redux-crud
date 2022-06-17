@@ -22,10 +22,10 @@ function ListItem({ lists, editHandler }) {
       </thead>
       <tbody>
         {lists &&
-          lists.map((list, index) => (
+          lists.map((list) => (
             <tr key={list.id}>
               <td>
-                <Link to={`details/${list.id}`}>{index}</Link>
+                <Link to={`detail/${list.id}`}>{list.id}</Link>
               </td>
               <td>{list.title}</td>
               <td>{list.description}</td>

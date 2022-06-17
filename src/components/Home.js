@@ -86,7 +86,6 @@ function Home() {
 
   return (
     <div>
-      <Header />
       <ToastContainer />
       {state.loading && <Spinner />}
       <Container>
