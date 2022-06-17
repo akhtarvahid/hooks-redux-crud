@@ -25,7 +25,7 @@ function ListItem({ lists, editHandler }) {
           lists.map((list, index) => (
             <tr key={list.id}>
               <td>
-                <Link to={`details/${list.id}`}>{index}</Link>
+                <Link to={`detail/${list.id}`}>{index + 1}</Link>
               </td>
               <td>{list.title}</td>
               <td>{list.description}</td>
