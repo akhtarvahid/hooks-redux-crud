@@ -6,10 +6,12 @@ import Home from "./components/Home";
 import ListDetail from "./components/ListDetail";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "./App.css";
+import Header from "./components/Header";
 
 function App() {
   return (
     <Provider store={store}>
+     <Header />
      <Router>
       <Routes>
         <Route path="/" element={<Home />}></Route>

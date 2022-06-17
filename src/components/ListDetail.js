@@ -10,7 +10,6 @@ function ListDetails() {
 
   return (
     <div>
-      <Header />
       ListDetails
     </div>
   );
