@@ -1,6 +1,9 @@
-.jumbotron {
-  padding: 15px 30px;
-  /* background-color: #7892b494; */
+.form-book {
+  margin-top: 20px;
+}
+.form-book h3 {
+  color: dodgerblue;
+  margin-bottom: 30px;
 }
 .btn-primary {
   color: #fff;
@@ -14,4 +17,8 @@
   margin-right: 10px;
   border-radius: 50%;
   transition: transform 0.2s;
+}
+.book-listing {
+  margin: 20px 0 0 0;
+  border-top: 2px solid #212529;
 }

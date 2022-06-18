@@ -7,21 +7,19 @@ function Create({ handleChange, submitForm, state }) {
   return(
     <Form onSubmit={submitForm}>
      <Form.Group className="mb-3" controlId="formBookTitle">
-      <Form.Label>Enter Title</Form.Label>
       <Form.Control 
           type="text" 
           name="title"
-          placeholder="Book title" 
+          placeholder="Enter your book title" 
           value={title}
           onChange={handleChange}
       />
      </Form.Group>
      <Form.Group className="mb-3" controlId="formBookDescription">
-      <Form.Label>Enter description</Form.Label>
       <Form.Control 
           type="text" 
           name="description"
-          placeholder="Enter book description" 
+          placeholder="Enter your book description" 
           value={description}
           onChange={handleChange}
       />

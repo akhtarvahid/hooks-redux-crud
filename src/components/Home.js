@@ -2,14 +2,12 @@ import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { ToastContainer, toast } from 'react-toastify';
 import ListItem from "./ListItem";
-import Header from "./Header";
 import Create from "./Create";
 import Container from "react-bootstrap/Container";
 import Update from "./Update";
 import Spinner from "../utils/loader/Spinner";
 import { getItems, addItem, updateItem } from "../actions/crudActions";
 import 'react-toastify/dist/ReactToastify.css';
-
 
 function Home() {
   const [state, setState] = useState({
@@ -90,7 +88,7 @@ function Home() {
       {state.loading && <Spinner />}
       <Container>
         {!popupStatus && (
-          <div>
+          <div className="form-book">
             <h3>Add Book</h3>
             <Create
               handleChange={handleChange}
@@ -99,7 +97,7 @@ function Home() {
             />
           </div>
         )}
-        <div>
+        <div className="book-listing">
           {lists?.length > 0 && <ListItem lists={lists} editHandler={editHandler} loading={true} />}
         </div>
       </Container>
